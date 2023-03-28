@@ -1,1 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Tilt+Warp&display=swap');
+    
+    /* ---------------------------- */
+    /*          CSS RESET  */
+    /* ---------------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: hsl(var(--bg-dark));
+  color: hsl(var(--clr-white));
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+      /* ---------------------------- */
+    /*         VARIEBLES     */
+    /* ---------------------------- */
+:root {
+
+    /* colors */
+    --bg-dark: 357, 10%, 43%;
+    --bg-light: 203, 33%, 60%;
+    --bg-accent: 15, 87%, 85%;
+    --clr-white: 0 100% 100%;
+    --clr-dark: 0 0% 0%;
+    --clr-accent: 112, 60%, 74%;
+
+    /* fonts */
+    --header-font: 'Tilt Warp', sans-serif;
+}
+
+
+    /* ---------------------------- */
+    /*         Utility Classes      */
+    /* ---------------------------- */
+
+.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+      /* ---------------------------- */
+    /*    Main   */
+    /* ---------------------------- */
+
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+        font-family: var(--header-font);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .title {
+        padding: 1rem;
+        margin: 3rem 1.5rem;
+    }
+  
+
+      /* ---------------------------- */
+    /*        gallery                  */
+    /* ---------------------------- */
+
+    .gallery {
+        padding: 3rem 7rem;
+        justify-content:  center;
+        flex-wrap: wrap;
+    }
+
+    .tile__container {
+        border: 2px solid hsl(var(--clr-dark));
+        border-radius: 10px;
+        background-color: hsl(var(--bg-accent));
+        height: 25rem;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 3px hsl(var(--clr-white));
+    }
+
+    .tile__container:hover {
+        color: hsl(var(--bg-dark)) / 0.5;
+        background-color: hsl(var(--clr-white));
+    }
+
+    .gallery-tile {
+        width: 35rem;
+        height: 20rem;
+        padding: 2px;
+        border-radius: 10px;
+        border: 1px solid black; 
+    }
+
+    .img-caption {
+        color: hsl(var(--clr-dark));
+        margin-top: 20rem;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    .img-caption:hover {
+        color: hsl(var(--clr-dark));
+        text-shadow: 1px 1px 2px hsl(var(--bg-accent));
+        margin-top: 20rem;
+        padding: 10px 0;
+    }
+
+    #city-img {
+        background-image: url(/City-Skyline.png);
+        background-size: 100%;
+    }
+
+    #gaming-img {
+        background-image: url(/gaming-picture.png);
+        background-size: 100%;
+    
+    }
+
+
+    #birthday-img {
+        background-image: url(/birthday-site-picture.png);
+        background-size: 100%;
+    }
+
+    #birthday-img:hover {
+        background-image: url(https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2RmM2M1Y2ViNzI0MmU2ZDBhYTk5MTk0YmMyZjcxNjE0ZjZiZmE3ZiZjdD1n/FaeqctFjBZwGY1L42v/giphy.gif);
+        background-size: contain;
+    }
+
+    #button-img {
+        background-image: url(/button-picture.png);
+        background-size: contain;
+    }
+
+    #button-img:hover {
+        background-image: url(https://media.giphy.com/media/0XDcbL3naAiEErsLm7/giphy.gif);
+        background-size: contain;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .gallery-tile {
+            width: 20rem;
+            max-height: 20rem;
+            margin: 1rem;
+            padding: 2px;
+        }
+
+        #city-img {
+            height: 10rem;
+        }
+    
+        #gaming-img {
+            height: 10rem;
+        }
+
+      }
+
+
+
+  
 
